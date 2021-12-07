@@ -4,7 +4,6 @@ library(tidyverse)
 initial_fish <- tibble(fish = read_lines("02_data/day_6.txt")) %>%
   separate_rows(fish, sep = ",", convert = T) 
 
-
 progress_day <- function(fish = initial_fish, after_day = 1){
 fish <-
   fish %>% 
