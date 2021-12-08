@@ -7,9 +7,7 @@ tibble(x = read_lines("02_data/day_2.txt")) %>%
   summarise(movement = sum(distance)) %>% 
   pull(movement) %>% prod()
 
-
-
-
+## 2
 tibble(x = read_lines("02_data/day_2.txt")) %>% 
   separate(col = x, into = c("direction","distance"), convert = TRUE) %>%
   mutate(distance = as.double(distance)) %>% 
