@@ -141,23 +141,17 @@ identify_5_2 <- function(known, initial){
 return(last)
 }
 
-# known <- identify_5_2(known = known, initial = initial)
-
-
-# signal_with_number <-
-# initial %>% group_split(id) %>% 
-
-  all_together <- function(initial){
-    all <-
-      initial %>% 
-  identify_obvious() %>% 
-  identify_3(initial = initial) %>% 
-  identify_9(initial = initial) %>% 
-  identify_0(initial = initial) %>% 
-  identify_6(initial = initial) %>% 
-  identify_5_2(initial = initial)
-return(all)
-  }
+all_together <- function(initial) {
+  all <-
+    initial %>%
+    identify_obvious() %>%
+    identify_3(initial = initial) %>%
+    identify_9(initial = initial) %>%
+    identify_0(initial = initial) %>%
+    identify_6(initial = initial) %>%
+    identify_5_2(initial = initial)
+  return(all)
+}
 
   initial %>% group_split(id) %>% 
     map_df(~all_together(initial = .x)) %>% 
