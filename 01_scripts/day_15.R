@@ -13,8 +13,6 @@ w <- tibble(weights = read_lines(file = file_path)) %>%
   pull(weights) %>% matrix(nrow = width, byrow = T)
 
 
-
-
 my_graph <- tibble(x = map(.x = 0:(nrow(l)-1), ~l[1,][-c(nrow(l))] + (.x*nrow(l))) %>% unlist(),
        y = map(.x = 0:(nrow(l)-1), ~l[1,][-1] + (.x*nrow(l))) %>% unlist()
        ) %>% 
