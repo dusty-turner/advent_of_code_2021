@@ -1,9 +1,9 @@
 library(tidyverse)
 
-min_x <- 20
-max_x <- 30
-min_y <- -10
-max_y <- -5
+# min_x <- 20
+# max_x <- 30
+# min_y <- -10
+# max_y <- -5
 
 min_x <- 201
 max_x <- 230
@@ -12,11 +12,9 @@ max_y <- -65
 
 start <- tibble(x = 0, y = 0)
 
-
 move_one <- function(start, initial_x, initial_y){
   end <-
   start %>% 
-    # slice_tail(n = 1) %>% 
     mutate(x = x+initial_x, y = y + initial_y)
   return(end)
   
